@@ -31,6 +31,7 @@ export class ProductosService {
       `https://angular-html-142e9.firebaseio.com/productos/${id}.json`
     );
   }
+
   buscarProducto(termino: string) {
     if (this.productos.length === 0) {
       // cargar productos
@@ -46,7 +47,7 @@ export class ProductosService {
   }
 
   private filtrarProductos(termino: string) {
-    // console.log(this.productos);
+    console.log(this.productos);
     this.productosFiltrado = [];
 
     termino = termino.toLocaleLowerCase();
@@ -61,5 +62,6 @@ export class ProductosService {
         this.productosFiltrado.push(prod);
       }
     });
+    console.log(this.productosFiltrado);
   }
 }
